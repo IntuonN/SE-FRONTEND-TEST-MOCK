@@ -11,7 +11,22 @@
 
 <!-- Coding JavaScript 2.1 here!!!! -->
 
-
+<script>
+	    //using jQuery
+		// เมื่อกดปุ่มจะสลับข้อความระหว่างเบอร์โทรกับ "xxx-xxxxxxx"
+		$(document).ready(function() {
+        $('#btn2_1').on('click',function() {
+			let phoneDisplay = $(str1); // เลือก <p> ที่จะแสดงข้อความ
+			
+				// ถ้า <p> มีข้อความเป็น "xxx-xxxxxxx" ก็เปลี่ยนเป็นเบอร์โทร
+				if (phoneDisplay.text() === 'xxx-xxxxxxx') {
+					phoneDisplay.text($('#ans1').text()); // แสดงเบอร์โทรจาก <p> ที่ซ่อนอยู่
+				}else{
+					phoneDisplay.text('xxx-xxxxxxx')
+				}
+        })
+    });
+</script>
 
 <!-- Coding JavaScript 2.1 here!!!! -->
 <hr>
@@ -26,7 +41,28 @@
 
 <!-- Coding JavaScript 2.2 here!!!! -->
 
+<script>
+	$(document).ready(function() {
+		$('#btn2_2').on('click',function() {
+			let date = new Date();
 
+			// ดึงวัน, เดือน และปี
+			 let day = date.getDate();
+			 let month = date.getMonth()+1; // เดือนนับจาก 0 (มกราคม = 0)
+			 let  year = date.getFullYear()+543;
+
+			 // ชื่อเดือนภาษาไทย
+			 const thaiMonths = [
+                "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", 
+                "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", 
+                "ตุลาคม", "พฤศจิกายน", "ธันวาคม"
+            ];
+
+			let formatDate = `วันที่ ${day} ${thaiMonths[month]} ${year}`;
+			$(`#str2`).text(formatDate);
+		});
+	});
+</script>
 
 <!-- Coding JavaScript 2.2 here!!!! -->
 <hr>
@@ -46,7 +82,21 @@
 
 <!-- Coding JavaScript 2.3 here!!!! -->
 
+<script>
+    $(document).ready(function() {
+        // สถานะเริ่มต้นของ div
+        let isVisible = true;
 
+        $('#btn2_3').on('click', function() {
+            if (isVisible) {
+                $('#ans3').slideUp(500); // สไลด์ขึ้นหายไปใช้เวลา 500 มิลลิวินาที
+            } else {
+                $('#ans3').slideDown(500); // สไลด์ลงกลับมาใช้เวลา 500 มิลลิวินาที
+            }
+            isVisible = !isVisible; // สลับสถานะการมองเห็น
+        });
+    });
+</script>
 
 <!-- Coding JavaScript 2.3 here!!!! -->
 <hr>
@@ -62,7 +112,17 @@
 
 <!-- Coding JavaScript 2.4 here!!!! -->
 
-
+<script>
+	$(document).ready(function() {
+		$(`#btn2_4`).on(`click`, function() {
+			if($(`#ans4`).is(`:checked`)){
+				alert('คุณเลือกแยมโรล')
+			}else{
+				alert('คุณไม่เลือกแยมโรล')
+			}
+		});
+	});
+</script>
 
 <!-- Coding JavaScript 2.4 here!!!! -->
 <hr>

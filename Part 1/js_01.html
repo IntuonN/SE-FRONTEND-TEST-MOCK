@@ -4,8 +4,20 @@
 <button class="btn btn-primary"  id="btn1_1" >คลิกที่นี่ JS1.1</button>
 
 <!-- Coding JavaScript 1.1 here!!!! -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+    //using jQuery
+    $(document).ready(
+        $('#btn1_1').on('click',function() {
+            alert("My name is 'Jah' .")
+        })
+    )
 
-
+    //not using jQuery
+    document.getElementById('btn1_1').addEventListener('click',function(){
+        alert("My name is 'Jah' .")
+    })
+</script>
 
 <!-- Coding JavaScript 1.1 here!!!! -->
 <hr>
@@ -17,6 +29,22 @@
 <button class="btn btn-primary"  id="btn1_2"  >คลิกที่นี่ JS1.2</button>
 <!-- Coding JavaScript 1.2 here!!!! -->
 
+<script>
+    //using jQuery
+    $(document).ready(
+        $('#btn1_2').on('click',function(){
+            let word = prompt('Please enter your word')
 
+            alert(`จำนวน Character ของ ${word} = ${word.length}`)
+        })
+    )
+
+     //not using jQuery
+     document.getElementById('btn1_2').addEventListener('click',function(){
+        let word = prompt('Please enter your word')
+        word = word.length
+        alert(`จำนวน Character ของ ${word}`)
+    })
+</script>
 
 <!-- Coding JavaScript 1.2 here!!!! -->
