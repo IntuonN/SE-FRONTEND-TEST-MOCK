@@ -126,3 +126,90 @@
 
 <!-- Coding JavaScript 2.4 here!!!! -->
 <hr>
+
+
+<h1> JavaScript 3.1 : 7 points </h1>
+- พิมพ์ข้อความลงในช่อง "รับค่า" <br>
+- แปลงตัวอักษรพิมพ์เล็ก-พิมพ์ใหญ่เป็นไปในทางตรงกันข้าม และแสดงในช่อง "ผลลัพธ์" <br><br>
+
+<!-- Coding JavaScript 3.1 here!!!! -->
+
+<form class="form-horizontal">
+	<div class="form-group">
+		<label for="focusedinput" class="col-sm-2 control-label">รับค่า</label>
+		<div class="col-sm-8">
+			<input type="text" class="form-control" id="opt3_1" name="opt3_1" value="" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="disabledinput" class="col-sm-2 control-label">ผลลัพธ์</label>
+		<div class="col-sm-8">
+			<input disabled type="text" class="form-control" id="display3_1" name="display3_1">
+		</div>
+	</div>
+</form>
+
+<script>
+	$(document).ready(function() {
+		$('#opt3_1').on('input', function() {
+			let inputText = $('#opt3_1').val();
+			let result = '';
+
+			for (let i = 0; i < inputText.length; i++) {
+				let char = inputText[i];
+				if(char == char.toLowerCase()){
+					result += char.toUpperCase();
+				}else{
+					result += char.toLowerCase();
+				}
+			}
+			$('#display3_1').val(result);
+		});
+	});
+</script>
+
+<!-- Coding JavaScript 3.1 here!!!! -->
+
+
+
+<hr>
+<h1> JavaScript 3.2 : 8 points </h1>
+- คลิกที่ปุ่ม "คลิกที่นี่ JS 3.2" จะทำการเพิ่มแถวในตารางทีละ 1 แถว <br>
+- แต่ละแถวประกอบด้วยคอลัมน์ ลำดับของนิสิต และช่องสำหรับกรอกข้อมูล <br><br>
+
+<!-- Coding JavaScript 3.2 here!!!! -->
+
+<button class="btn btn-primary" id="btn3_2">คลิกที่นี่ JS 3.2</button>
+<table id="tb_list" class="table table-striped" border="1">
+	
+	<thead>
+		<tr class="info">
+			<td colspan="2">รายชื่อนิสิต</td>
+		</tr>
+	</thead>
+	<tbody></tbody>
+</table>
+
+<script>
+	let studentNoCount = 0;
+
+	$(document).ready(function() {
+		$('#btn3_2').on('click', function() {
+			studentNoCount++;
+
+			let row = $('<tr></tr>');
+			let col1 = $('<td></td>').text(studentNoCount);
+			let col2 = $('<td></td>');
+
+			let inputField = $('<input type="text">');
+			col2.append(inputField);
+
+			row.append(col1);
+			row.append(col2);
+
+			$('#tb_list').append(row);
+		});
+	});
+</script>
+
+<!-- Coding JavaScript 3.2 here!!!! -->
